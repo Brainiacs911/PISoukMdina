@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Souk El Medina{% endblock %}</title>
+        {% block stylesheets %}
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta name="keywords" content="Grocery Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+            <link href="{{ asset('FrontOffice/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('FrontOffice/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('FrontOffice/css/font-awesome.css') }}" rel="stylesheet">
+            <link href="{{ asset('FrontOffice/css/popuo-box.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('FrontOffice/css/jquery-ui1.css') }}">
+            <link rel="stylesheet" href="{{ asset('FrontOffice/css/flexslider.css') }}" type="text/css" media="screen" />
+            <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('FrontOffice/css/creditly.css') }}" type="text/css" media="all" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('Souk2.png') }}" />
+    </head>
+    <body>
+        {% block body %}
+
+            {% block header %}
+            <div class="header-most-top">
+                <p>Souk Medina Top Deals & Discounts</p>
+            </div>
+            <!-- //top-header -->
+            <!-- header-bot-->
+            <div class="header-bot">
+                <div class="header-bot_inner_wthreeinfo_header_mid">
+                    <!-- header-bot-->
+                    <div class="col-md-4 logo_agile">
+                        <h1>
+                            <img src="{{ asset('FrontOffice/images/Souk2.png') }}">
+                            <a href="{{ path('souk_medina_homepage') }}">
+                                <span>S</span>ouk
+                                <span>M</span>edina
+
+                            </a>
+                        </h1>
+                    </div>
+                    <!-- header-bot -->
+                    <div class="col-md-8 header">
+                        <!-- header lists -->
+                        <ul>
+                            <li>
+                                <a class="play-icon popup-with-zoom-anim" href="#small-dialog1">
+                                    <span class="fa fa-map-marker" aria-hidden="true"></span> Shop Locator</a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#myModal1">
+                                    <span class="fa fa-truck" aria-hidden="true"></span>Track Order</a>
+                            </li>
+                            <li>
+                                <span class="fa fa-phone" aria-hidden="true"></span>+216 70 685 685
+                            </li>
+                            {% if is_granted('ROLE_USER') %}
+
+                                <li>
+                                    <a href="{{ path('fos_user_security_logout') }}">
+                                        <span class="fa fa-unlock-alt" aria-hidden="true"></span> Logout</a>
+                                </li>
+                                    <a href="#" data-toggle="modal" data-target="#myModal1">
+
+
+
+                            {% else %}
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#myModal1">
+                                    <span class="fa fa-unlock-alt" aria-hidden="true"></span> Sign In </a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#myModal2">
+                                    <span class="fa fa-pencil-square-o" aria-hidden="true"></span> Sign Up </a>
+                            </li>
+
+                            {% endif %}
+
+                        <!-- //header lists -->
+                        <!-- search -->
+                        <div class="agileits_search">
+
+                            <form action="#" method="post">
+                                <input name="Search" type="search" placeholder="How can we help you today?" required>
+                                <button type="submit" class="btn btn-default" aria-label="Left Align">
+                                    <span class="fa fa-search" aria-hidden="true"> </span>
+                                </button>
+                            </form>
+                        </div>
+                        <!-- //search -->
+                        <!-- cart details -->
+                        <div class="top_nav_right">
+                            <div class="wthreecartaits wthreecartaits2 cart cart box_1">
+                                <form action="#" method="post" class="last">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="display" value="1">
+                                    <button class="w3view-cart" type="submit" name="submit" value="">
+                                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- //cart details -->
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- shop locator (popup) -->
+            <!-- Button trigger modal(shop-locator) -->
+            <div id="small-dialog1" class="mfp-hide">
+                <div class="select-city">
+                    <h3>Please Select Your Location</h3>
+                    <select class="list_of_cities">
+                        <optgroup label="Popular Cities">
+                            <option selected style="display:none;color:#eee;">Select City</option>
+                            <option>Ariana</option>
+                            <option>Béja</option>
+                            <option>Ben Arous</option>
+                            <option>Bizerte</option>
+                            <option>Gabes</option>
+                            <option>Gafsa</option>
+                            <option>Jendouba</option>
+                            <option>Kairouan</option>
+                            <option>Kasserine</option>
+                            <option>Kebili</option>
+                            <option>La Manouba</option>
+                            <option>Le Kef</option>
+                            <option>Mahdia</option>
+                            <option>Médenine</option>
+                            <option>Monastir</option>
+                            <option>Nabeul</option>
+                            <option>Sfax</option>
+                            <option>Sidi Bouzid</option>
+                            <option>Siliana</option>
+                            <option>Sousse</option>
+                            <option>Tataouine</option>
+                            <option>Tozeur</option>
+                            <option>Tunis</option>
+                            <option>Zaghouan</option>
+                        </optgroup>
+                    </select>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- //shop locator (popup) -->
+            <!-- signin Model -->
+            <!-- Modal1 -->
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body modal-body-sub_agile">
+                            <div class="main-mailposi">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                            </div>
+                            <div class="modal_body_left modal_body_left1">
+                                <h3 class="agileinfo_sign">Sign In </h3>
+                                <p>
+                                    Sign In now, Let's start your Souk Medina Shopping. Don't have an account?
+                                    <a href="#" data-toggle="modal" data-target="#myModal2">
+                                        Sign Up Now</a>
+                                </p>
+                                <form action="{{ path("fos_user_security_check") }}" method="post" >
+                                    <input type="hidden" name="_csrf_token" value="{{ render(controller("AppBundle:Default:getToken")) }}" />
+                                    <div class="styled-input agile-styled-input-top">
+                                        <input type="text"  id="username" name="_username" placeholder="User Name" />
+                                    </div>
+                                    <div class="styled-input">
+
+                                        <input type="password"  id="password" name="_password" placeholder="password" />
+                                    </div>
+                                    <div class="action_btns">
+
+
+                                        <input type="submit" class="btn btn-primary btn-default mt-3 w-100" id="_submit" name="_submit" value="Se connecter" />
+                                    </div>
+                                </form>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- //Modal content-->
+                </div>
+            </div>
+            <!-- //Modal1 -->
+            <!-- //signin Model -->
+            <!-- signup Model -->
+            <!-- Modal2 -->
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body modal-body-sub_agile">
+                            <div class="main-mailposi">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                            </div>
+                            <div class="modal_body_left modal_body_left1">
+                                <h3 class="agileinfo_sign">Sign Up</h3>
+                                <p>
+                                    Come join the Souk Medina! Let's set up your Account.
+                                </p>
+
+                                 <form name="fos_user_registration_form" class="fos_user_registration_register" action="{{path('fos_user_registration_register') }}" method="post">
+                                    <input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" value="{{csrf_token('registration')}}">
+                                    <div class="styled-input agile-styled-input-top">
+                                        <input type="text" id="fos_user_registration_form_nom" class="form-username form-control" name="fos_user_registration_form[nom]" placeholder="Name"  required>
+                                    </div>
+                                    <div class="styled-input agile-styled-input-top">
+                                        <input type="text" id="fos_user_registration_form_prenom" class="form-username form-control"name="fos_user_registration_form[prenom]" placeholder="LastName"  required>
+                                    </div>
+                                    <div class="styled-input agile-styled-input-top">
+                                        <input type="text" id="fos_user_registration_form_adress" class="form-username form-control" name="fos_user_registration_form[adress]" placeholder="Adress"  required>
+                                    </div>
+                                    <div class="styled-input agile-styled-input-top">
+                                        <input type="text" id="fos_user_registration_form_phone" class="form-username form-control" name="fos_user_registration_form[phone]" placeholder="Phone" required>
+                                    </div>
+                                    <div class="styled-input">
+                                        <input type="email" id="fos_user_registration_form_email" class="form-username form-control" placeholder="Email..." name="fos_user_registration_form[email]" required="required">
+                                    </div>
+                                    <div class="styled-input agile-styled-input-top">
+                                        <input type="text" id="fos_user_registration_form_username" class="form-username form-control" name="fos_user_registration_form[username]" required="required" maxlength="180" pattern=".{2,}" placeholder="Nom d'utilisateur...">
+                                    </div>
+
+                                    <div class="styled-input">
+                                        <input type="password" id="fos_user_registration_form_plainPassword_first" class="form-username form-control" name="fos_user_registration_form[plainPassword][first]" required="required" autocomplete="new-password" placeholder="Mot de passe...">
+                                    </div>
+                                    <div class="styled-input">
+                                        <input type="password" id="fos_user_registration_form_plainPassword_second" class="form-username form-control" name="fos_user_registration_form[plainPassword][second]" required="required" autocomplete="new-password" placeholder="Confirmation de mot de passe...">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                            <label for="fos_user_registration_form_roles" class="sr-only">Role</label>
+                                            <select id="fos_user_registration_form_roles" name="fos_user_registration_form[roles][]" required="required" class="form-username form-control">
+                                                <option value=" ROLE_CLIENT">Client</option>
+                                                <option value="ROLE_GERANT">Gerant</option>
+                                                <option value="ROLE_SUPER_ADMIN">Admin</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="submit" value="{{ 'submit'|trans }}" id="_submit" name="_submit" />
+                                    </div>
+
+                                </form>
+                                <p>
+                                    <a href="#">By clicking register, I agree to your terms</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //Modal content-->
+                </div>
+            </div>
+            <!-- //Modal2 -->
+            <!-- //signup Model -->
+            <!-- //header-bot -->
+            <!-- navigation -->
+            <div class="ban-top">
+                <div class="container">
+                    <div class="top_nav_left">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav menu__list">
+                                        <li class="active">
+                                            <a class="nav-stylehead" href="{{ path('souk_medina_homepage') }}">Home
+                                                <span class="sr-only">(current)</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="nav-stylehead" href="{{ path('souk_medina_about') }}">About Us</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="nav-stylehead" href="{{ path('souk_medina_Boutique') }}">Boutique</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="nav-stylehead" href="{{ path('souk_medina_CafeHotel') }}">Cafe & Hotel</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="nav-stylehead" href="{{ path('souk_medina_Shop') }}">Shop</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="nav-stylehead" href="{{ path('souk_medina_Events') }}">Events</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="nav-stylehead" href="{{ path('souk_medina_Reclamations') }}">Reclamations</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="nav-stylehead" href="{{ path('souk_medina_Gallerie') }}">Gallerie</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="nav-stylehead" href="{{ path('souk_medina_Contact') }}">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+            {% block Page %}
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                        <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h3> مغروم<span> بالحاجات </span>التقليدية؟؟؟</h3>
+                                    <p>Get Upto
+                                        <span>40%</span> Off</p>
+                                    <a class="button2" href="{{ path('souk_medina_Shop') }}">Shop Now  </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item2">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h3>
+                                        تلوج
+                                        <span> و ملقيتش </span>منين؟؟
+                                    </h3>
+                                    <p>Get Upto
+                                        <span>30%</span> Off</p>
+                                    <<a class="button2" href="{{ path('souk_medina_Shop') }}">Shop Now  </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item3">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h3>أحنا<span> نعاونوك</span></h3>
+                                    <p>Get Best Offer Upto
+                                        <span>20%</span>
+                                    </p>
+                                    <a class="button2" href="{{ path('souk_medina_Shop') }}">Shop Now  </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item item4">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <h3>وقيت <span>بش تجي</span> معنا  ؟</h3>
+                                    <p>Get Now
+                                        <span>40%</span> Discount</p>
+                                    <a class="button2" href="{{ path('souk_medina_Shop') }}">Shop Now  </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+            {% endblock %}
+
+            {% block footer %}
+                <!-- footer -->
+                <footer>
+                    <div class="container">
+                        <!-- footer second section -->
+                        <div class="w3l-grids-footer">
+                            <div class="col-xs-4 offer-footer">
+                                <div class="col-xs-4 icon-fot">
+                                    <span class="fa fa-map-marker" aria-hidden="true"></span>
+                                </div>
+                                <div class="col-xs-8 text-form-footer">
+                                    <h3>Track Your Order</h3>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-xs-4 offer-footer">
+                                <div class="col-xs-4 icon-fot">
+                                    <span class="fa fa-refresh" aria-hidden="true"></span>
+                                </div>
+                                <div class="col-xs-8 text-form-footer">
+                                    <h3>Free & Easy Returns</h3>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-xs-4 offer-footer">
+                                <div class="col-xs-4 icon-fot">
+                                    <span class="fa fa-times" aria-hidden="true"></span>
+                                </div>
+                                <div class="col-xs-8 text-form-footer">
+                                    <h3>Online cancellation </h3>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- //footer second section -->
+                        <!-- footer third section -->
+                        <div class="footer-info w3-agileits-info">
+                            <!-- footer categories -->
+                            <div class="col-sm-5 address-right">
+                                <div class="col-xs-6 footer-grids">
+                                    <h3>Produit</h3>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Grocery</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Fruits</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Soft Drinks</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Dishwashers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Biscuits & Cookies</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Baby Diapers</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-6 footer-grids">
+                                    <h3>Local</h3>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('souk_medina_Boutique') }}">Boutique</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('souk_medina_CafeHotel') }}">Cafe & Hotel</a>
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- //footer categories -->
+                            <!-- quick links -->
+                            <div class="col-sm-5 address-right">
+                                <div class="col-xs-6 footer-grids">
+                                    <h3>Quick Links</h3>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('souk_medina_about') }}">About Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('souk_medina_Boutique') }}">Boutique</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('souk_medina_CafeHotel') }}">Cafe & Hotel</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('souk_medina_Shop') }}">Shop</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('souk_medina_Events') }}">Events</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('souk_medina_Contact') }}">Contact Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('souk_medina_Reclamations') }}">Reclamations</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('souk_medina_Gallerie') }}">Gallerie</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-xs-6 footer-grids">
+                                    <h3>Get in Touch</h3>
+                                    <ul>
+                                        <li>
+                                            <i class="fa fa-map-marker"></i>Z.I. Chotrana II B.P. 160 <br>
+                                            Pôle Technologique El Ghazela - Ariana </li>
+                                        <li>
+                                            <i class="fa fa-mobile"></i> 58 652 521 </li>
+                                        <li>
+                                            <i class="fa fa-phone"></i>+216 70 685 685</li>
+                                        <li>
+                                            <i class="fa fa-envelope-o"></i>
+                                            <a href="mailto:example@mail.com">contact@esprit.tn</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- //quick links -->
+                            <!-- social icons -->
+                            <div class="col-sm-2 footer-grids  w3l-socialmk">
+                                <h3>Follow Us on</h3>
+                                <div class="social">
+                                    <ul>
+                                        <li>
+                                            <a class="icon fb" href="#">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="icon tw" href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="icon gp" href="#">
+                                                <i class="fa fa-google-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <!-- //social icons -->
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- //footer third section -->
+                        <!-- footer fourth section (text) -->
+                        <div class="agile-sometext">
+
+
+                            <!-- payment -->
+                            <div class="sub-some child-momu">
+                                <h5>Payment Method</h5>
+                                <ul>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/pay2.png') }}">
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/pay5.png') }}">
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/pay1.png') }}">
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/pay4.png') }}">
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/pay6.png') }}">
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/pay3.png') }}">
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/pay7.png') }}">
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/pay8.png') }}">
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('FrontOffice/images/pay9.png') }}">
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //payment -->
+                        </div>
+                        <!-- //footer fourth section (text) -->
+                    </div>
+                </footer>
+
+                <!-- //footer -->
+
+                <!-- copyright -->
+                <div class="copy-right">
+                    <div class="container">
+                        <p>© 2018 Souk Medina. All rights reserved | Design by
+                            <a href="#"> Brainiacs.</a>
+                        </p>
+                    </div>
+                </div>
+            {% endblock %}
+
+        {% endblock %}
+        {% block javascripts %}
+            <script>
+                addEventListener("load", function () {
+                    setTimeout(hideURLbar, 0);
+                }, false);
+
+                function hideURLbar() {
+                    window.scrollTo(0, 1);
+                }
+            </script>
+                <script src="{{ asset('FrontOffice/js/jquery-2.1.4.min.js') }}"></script>
+                <script src="{{ asset('FrontOffice/js/jquery.magnific-popup.js') }}"></script>
+                <script>
+                    $(document).ready(function () {
+                        $('.popup-with-zoom-anim').magnificPopup({
+                            type: 'inline',
+                            fixedContentPos: false,
+                            fixedBgPos: true,
+                            overflowY: 'auto',
+                            closeBtnInside: true,
+                            preloader: false,
+                            midClick: true,
+                            removalDelay: 300,
+                            mainClass: 'my-mfp-zoom-in'
+                        });
+
+                    });
+                </script>
+                <script src="{{ asset('FrontOffice/js/minicart.js') }}"></script>
+                <script>
+                    paypalm.minicartk.render(); //use only unique class names other than paypalm.minicartk.Also Replace same class name in css and minicart.min.js
+
+                    paypalm.minicartk.cart.on('ch', function (evt) {
+                        var items = this.items(),
+                            len = items.length,
+                            total = 0,
+                            i;
+
+                        // Count the number of each item in the cart
+                        for (i = 0; i < len; i++) {
+                            total += items[i].get('quantity');
+                        }
+
+
+                    });
+                </script>
+                <script src="{{ asset('FrontOffice/js/jquery-ui.js') }}"></script>
+                <script>
+                    //<![CDATA[
+                    $(window).load(function () {
+                        $("#slider-range").slider({
+                            range: true,
+                            min: 0,
+                            max: 9000,
+                            values: [50, 6000],
+                            slide: function (event, ui) {
+                                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                            }
+                        });
+                        $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+                    }); //]]>
+                </script>
+                <script src="{{ asset('FrontOffice/js/jquery.flexisel.js') }}"></script>
+                <script>
+                    $(window).load(function () {
+                        $("#flexiselDemo1").flexisel({
+                            visibleItems: 3,
+                            animationSpeed: 1000,
+                            autoPlay: true,
+                            autoPlaySpeed: 3000,
+                            pauseOnHover: true,
+                            enableResponsiveBreakpoints: true,
+                            responsiveBreakpoints: {
+                                portrait: {
+                                    changePoint: 480,
+                                    visibleItems: 1
+                                },
+                                landscape: {
+                                    changePoint: 640,
+                                    visibleItems: 2
+                                },
+                                tablet: {
+                                    changePoint: 768,
+                                    visibleItems: 2
+                                }
+                            }
+                        });
+
+                    });
+                </script>
+                <script>
+                    window.onload = function () {
+                        document.getElementById("password1").onchange = validatePassword;
+                        document.getElementById("password2").onchange = validatePassword;
+                    }
+
+                    function validatePassword() {
+                        var pass2 = document.getElementById("password2").value;
+                        var pass1 = document.getElementById("password1").value;
+                        if (pass1 != pass2)
+                            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+                        else
+                            document.getElementById("password2").setCustomValidity('');
+                        //empty string means no validation error
+                    }
+                </script>
+                <script src="{{ asset('FrontOffice/js/SmoothScroll.min.js') }}"></script>
+                <script src="{{ asset('FrontOffice/js/move-top.js') }}"></script>
+                <script src="{{ asset('FrontOffice/js/easing.js') }}"></script>
+                <script>
+                    jQuery(document).ready(function ($) {
+                        $(".scroll").click(function (event) {
+                            event.preventDefault();
+
+                            $('html,body').animate({
+                                scrollTop: $(this.hash).offset().top
+                            }, 1000);
+                        });
+                    });
+                </script>
+                <script>
+                    $(document).ready(function () {
+                        /*
+                        var defaults = {
+                            containerID: 'toTop', // fading element id
+                            containerHoverID: 'toTopHover', // fading element hover id
+                            scrollSpeed: 1200,
+                            easingType: 'linear'
+                        };
+                        */
+                        $().UItoTop({
+                            easingType: 'easeOutQuart'
+                        });
+
+                    });
+                </script>
+                <script src="{{ asset('FrontOffice/js/bootstrap.js') }}"></script>
+
+            <script src="{{ asset('FrontOffice/js/imagezoom.js') }}"></script>
+            <script src="{{ asset('FrontOffice/js/jquery.flexslider.js') }}"></script>
+            <script>
+                // Can also be used with $(document).ready()
+                $(window).load(function () {
+                    $('.flexslider').flexslider({
+                        animation: "slide",
+                        controlNav: "thumbnails"
+                    });
+                });
+            </script>
+            <script src="{{ asset('FrontOffice/js/jquery.flexisel.js') }}"></script>
+            <script>
+                $(window).load(function () {
+                    $("#flexiselDemo1").flexisel({
+                        visibleItems: 3,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint: 480,
+                                visibleItems: 1
+                            },
+                            landscape: {
+                                changePoint: 640,
+                                visibleItems: 2
+                            },
+                            tablet: {
+                                changePoint: 768,
+                                visibleItems: 2
+                            }
+                        }
+                    });
+
+                });
+            </script>
+
+            <!-- credit-card -->
+            <script src="{{ asset('FrontOffice/js/creditly.js') }}"></script>
+            <script>
+                $(function () {
+                    var creditly = Creditly.initialize(
+                        '.creditly-wrapper .expiration-month-and-year',
+                        '.creditly-wrapper .credit-card-number',
+                        '.creditly-wrapper .security-code',
+                        '.creditly-wrapper .card-type');
+
+                    $(".creditly-card-form .submit").click(function (e) {
+                        e.preventDefault();
+                        var output = creditly.validate();
+                        if (output) {
+                            // Your validated credit card output
+                            console.log(output);
+                        }
+                    });
+                });
+            </script>
+            <link rel="stylesheet" type="text/css" href="{{ asset('FrontOffice/css/easy-responsive-tabs.css ') }}" />
+            <script src="{{ asset('FrontOffice/js/easyResponsiveTabs.js') }}"></script>
+
+            <script>
+                $(document).ready(function () {
+                    //Horizontal Tab
+                    $('#parentHorizontalTab').easyResponsiveTabs({
+                        type: 'default', //Types: default, vertical, accordion
+                        width: 'auto', //auto or any width like 600px
+                        fit: true, // 100% fit in a container
+                        tabidentify: 'hor_1', // The tab groups identifier
+                        activate: function (event) { // Callback function if tab is switched
+                            var $tab = $(this);
+                            var $info = $('#nested-tabInfo');
+                            var $name = $('span', $info);
+                            $name.text($tab.text());
+                            $info.show();
+                        }
+                    });
+                });
+            </script>
+            <!-- //easy-responsive-tabs -->
+        {% endblock %}
+    </body>
+</html>

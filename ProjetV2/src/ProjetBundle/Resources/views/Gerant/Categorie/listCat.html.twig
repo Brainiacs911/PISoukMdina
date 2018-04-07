@@ -1,0 +1,41 @@
+{% extends"ProjetBundle::LayoutG.html.twig" %}
+{% block page %}
+    <div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Liste des Categories</h4>
+
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+
+                            <th>id</th>
+                            <th>Nom</th>
+                            <th>Description</th>
+                            <th>Suppression</th>
+                            <th>Modifier</th>
+                            </tr>
+                            {% for categorie in categories %}
+                                <tr>
+                                    <td>{{ categorie.id }}</td>
+                                    <td>{{ categorie.nom }}</td>
+                                    <td>{{ categorie.description }}</td>
+                                    <td><a href="{{ path('supprimer_categorie',{'id':categorie.id}) }}">Supprimer</a> </td>
+                                    <td><a href="{{ path('modifier_categorie',{'id':categorie.id}) }}">Modifier</a> </td>
+
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

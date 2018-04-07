@@ -1,0 +1,48 @@
+souk_medina_homepage:
+    path:   /
+    defaults: { _controller: ProjetBundle:Visiteur:index }
+souk_medina_about:
+    path:   /About
+    defaults: { _controller: ProjetBundle:Visiteur:About }
+souk_medina_Boutique:
+    path:   /Boutique
+    defaults: { _controller: ProjetBundle:Boutique:Boutique }
+souk_medina_Boutique_Details:
+    path:   /DetailsB
+    defaults: { _controller: ProjetBundle:Boutique:DetailsBoutique }
+souk_medina_CafeHotel:
+    path:   /CafeHotel
+    defaults: { _controller: ProjetBundle:CafeHotel:CafeHotel }
+souk_medina_CafeHotel_Details:
+    path:   /DetailsC
+    defaults: { _controller: ProjetBundle:CafeHotel:CafeHotelDetails }
+souk_medina_Shop:
+    path:   /Shop
+    defaults: { _controller: ProjetBundle:Shop:Shop }
+souk_medina_Shop_Details:
+    path:   /DetailsS/{id}
+    defaults: { _controller: ProjetBundle:Shop:ShopDetails }
+souk_medina_Shop_Noter:
+    path:   /DetailsNote/{id}
+    defaults: { _controller: ProjetBundle:Shop:NoterProduit }
+souk_medina_Events:
+    path:   /Events
+    defaults: { _controller: ProjetBundle:Events:Events }
+souk_medina_Events_Details:
+    path:   /DetailsE
+    defaults: { _controller: ProjetBundle:Events:EventsDetails }
+souk_medina_Reclamations:
+    path:   /Reclamations
+    defaults: { _controller: ProjetBundle:Reclamations:Reclamations }
+souk_medina_Gallerie:
+    path:   /Gallerie
+    defaults: { _controller: ProjetBundle:Visiteur:Gallerie }
+souk_medina_Contact:
+    path:   /Contact
+    defaults: { _controller: ProjetBundle:Visiteur:Contact }
+souk_medina_CheckOut:
+    path:   /CheckOut
+    defaults: { _controller: ProjetBundle:Visiteur:CheckOut }
+souk_medina_Paymenet:
+    path:   /Payment
+    defaults: { _controller: ProjetBundle:Visiteur:Paymenet }

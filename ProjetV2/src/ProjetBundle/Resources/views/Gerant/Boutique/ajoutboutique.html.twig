@@ -1,0 +1,9 @@
+{% extends"ProjetBundle::LayoutG.html.twig" %}
+{% block page %}
+    <h1>Ajouter boutique</h1>
+    {{ form_start(form) }}
+
+
+    {{ form_row(form.image) }}
+    {{ form_end(form) }}
+{% endblock %}

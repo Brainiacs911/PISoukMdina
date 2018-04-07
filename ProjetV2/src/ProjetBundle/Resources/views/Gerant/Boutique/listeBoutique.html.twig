@@ -1,0 +1,51 @@
+{% extends"ProjetBundle::LayoutG.html.twig" %}
+{% block page %}
+    <div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Liste des Boutique</h4>
+
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+
+                            <th>id</th>
+                            <th>Nom Boutique</th>
+                            <th>Description</th>
+                            <th>Adresse</th>
+                            <th>heure ouverture</th>
+                            <th>heure fermeture</th>
+                            <th>email</th>
+                            <th>Image</th>
+                            <th>Supression</th>
+                            <th>Modification</th>
+                            </tr>
+                            {% for boutique in boutiques %}
+                                <tr>
+                                    <td>{{ boutique.id }}</td>
+                                    <td>{{ boutique.nomBoutique }}</td>
+                                    <td>{{ boutique.description }}</td>
+                                    <td>{{ boutique.adresse }}</td>
+                                    <td>{{ boutique.heureo|date("m/d/y h:i:sa") }}</td>
+                                    <td>{{ boutique.heuref|date("m/d/y h:i:sa") }}</td>
+                                    <td>{{ boutique.email }}</td>
+                                    <td><img src="{{ asset('uploads/brochures/' ~ boutique.image) }}" style="height: 80px; width: 120px"></img></td>
+                                    <td><a href="{{ path('supprimer_boutique',{'id':boutique.id}) }}">Supprimer</a> </td>
+                                    <td><a href="{{ path('modifier_boutique',{'id':boutique.id}) }}">Modifier</a> </td>
+
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

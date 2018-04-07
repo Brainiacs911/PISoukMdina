@@ -1,0 +1,15 @@
+souk_medina_visiteur:
+    resource: "@ProjetBundle/Resources/config/routing/Visteur.yml"
+    prefix:   /Visiteur
+
+souk_medina_Client:
+    resource: "@ProjetBundle/Resources/config/routing/Client.yml"
+    prefix:   /Client
+
+souk_medina_gerant:
+    resource: "@ProjetBundle/Resources/config/routing/Gerant.yml"
+    prefix:   /Gerant
+
+souk_medina_admin:
+    resource: "@ProjetBundle/Resources/config/routing/Admin.yml"
+    prefix:   /Admin

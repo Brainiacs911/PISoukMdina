@@ -1,0 +1,52 @@
+souk_medina_DasboardG:
+    path:   /
+    defaults: { _controller: ProjetBundle:Admin:index }
+souk_medina_inboxG:
+    path:   /inbox
+    defaults: { _controller: ProjetBundle:Gerant:inbox }
+souk_medina_ProduitG:
+    path:   /Produit
+    defaults: { _controller: ProjetBundle:Produit:ProduitG }
+souk_medina_ReclamationsV:
+    path:   /Reclamations
+    defaults: { _controller: ProjetBundle:Reclamations:ReclamationsGerant }
+souk_medina_Promotions:
+    path:   /Promotions
+    defaults: { _controller: ProjetBundle:Reclamations:ReclamationsAdmin }
+afficher_categorie:
+    path:   /categorie
+    defaults: { _controller: ProjetBundle:Categorie:afficheCatg }
+ajouter_categorie:
+    path:   /ajoutcategorie
+    defaults: { _controller: ProjetBundle:Categorie:ajoutCat }
+supprimer_categorie:
+    path:   /delete_categorie/{id}
+    defaults: { _controller: ProjetBundle:Categorie:deleteCat }
+modifier_categorie:
+    path:   /update_categorie/{id}
+    defaults: { _controller: ProjetBundle:Categorie:updateCat }
+afficher_boutique:
+    path:   /affichBoutique
+    defaults: { _controller: ProjetBundle:Boutique:affichbout }
+ajouter_boutique:
+    path:   /ajoutBoutique
+    defaults: { _controller: ProjetBundle:Boutique:addBout }
+modifier_boutique:
+    path:   /update_boutique/{id}
+    defaults: { _controller: ProjetBundle:Boutique:updateBout }
+supprimer_boutique:
+    path:   /delete_boutique/{id}
+    defaults: { _controller: ProjetBundle:Boutique:deleteBout }
+afficher_produit:
+    path:   /affichproduit
+    defaults: { _controller: ProjetBundle:Produit:affichPrdt }
+ajouter_produit:
+    path:   /ajoutproduit
+    defaults: { _controller: ProjetBundle:Produit:ajoutPrdt}
+modifier_produit:
+    path:   /update_produit/{id}
+    defaults: { _controller: ProjetBundle:Produit:updatePrdt}
+supprimer_produit:
+    path:   /delete_produit/{id}
+    defaults: { _controller: ProjetBundle:Produit:deletePrdt }
+

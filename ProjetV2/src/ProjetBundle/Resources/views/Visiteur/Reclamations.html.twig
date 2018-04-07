@@ -1,0 +1,56 @@
+{% extends"::base.html.twig" %}
+{% block Page %}
+    <!-- page -->
+    <div class="services-breadcrumb">
+        <div class="agile_inner_breadcrumb">
+            <div class="container">
+                <ul class="w3_short">
+                    <li>
+                        <a href="{{ path('souk_medina_homepage') }}">Home</a>
+                        <i>|</i>
+                    </li>
+                    <li>Reclamations</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //page -->
+    <!-- contact page -->
+    <div class="contact-w3l">
+        <div class="container">
+            <!-- tittle heading -->
+            <h3 class="tittle-w3l">Reclamations
+                <span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+            </h3>
+            <!-- //tittle heading -->
+            <!-- contact -->
+            <div class="contact agileits">
+                <div class="contact-agileinfo">
+                    <div class="contact-form wthree">
+                        <form action="#" method="post">
+                            <div class="">
+                                <input type="text" name="name" placeholder="Name" required="">
+                            </div>
+                            <div class="">
+                                <input class="text" type="text" name="subject" placeholder="Subject" required="">
+                            </div>
+                            <div class="">
+                                <input class="email" type="email" name="email" placeholder="Email" required="">
+                            </div>
+                            <div class="">
+                                <textarea placeholder="Message" name="message" required=""></textarea>
+                            </div>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!-- //contact -->
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+souk_medina_DasboardA:
+    path:   /
+    defaults: { _controller: ProjetBundle:Admin:index }
+souk_medina_inboxA:
+    path:   /inbox
+    defaults: { _controller: ProjetBundle:Admin:inbox }
+souk_medina_eventsA:
+    path:   /EventsA
+    defaults: { _controller: ProjetBundle:Events:EventsAdmin }
+souk_medina_LocationA:
+    path:   /Location
+    defaults: { _controller: ProjetBundle:Location:LocationAdmin }
+souk_medina_ReclmationsA:
+    path:   /Reclamations
+    defaults: { _controller: ProjetBundle:Reclamations:ReclamationsAdmin }
+souk_medina_Gallery:
+    path:   /Gallery
+    defaults: { _controller: ProjetBundle:Admin:index }
